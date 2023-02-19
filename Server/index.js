@@ -10,11 +10,12 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors())
 
-app.use(express.static(path.join(__dirname,"./client/build")))
+app.use(express.static(path.join(__dirname,"../client/build")))
 
 app.get("*", (req,resp)=>{
-    resp.sendFile(path.join(__dirname,"./client/build/index.html"))
+    resp.sendFile(path.join(__dirname,"../client/public/index.html"))
 })
+
 
 connection();
 
